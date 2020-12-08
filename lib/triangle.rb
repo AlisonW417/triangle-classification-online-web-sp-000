@@ -7,6 +7,9 @@ class Triangle
     @side3 = side3
   end 
   
+  class TriangleError < StandardError
+  end 
+  
   def kind 
     if @side1 == @side2 && @side2 == @side3
       :equilateral
@@ -20,10 +23,5 @@ class Triangle
     else 
       :isosceles
     end 
-  end 
-  
-  class TriangleError < StandardError
-  end 
-  
-  
+  end
 end
