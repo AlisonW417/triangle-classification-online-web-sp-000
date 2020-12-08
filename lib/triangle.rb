@@ -8,6 +8,9 @@ class Triangle
   end 
   
   class TriangleError < StandardError
+    def message
+      puts "Each side of the triangle must be larger than 0."
+    end 
   end 
   
   def kind 
@@ -15,10 +18,11 @@ class Triangle
       :equilateral
     elsif @side1 != @side2 && @side1 != @side3 && @side2 != @side3
       :scalene
-    elsif @side1 == 0 || @side2 == 0 || @side3 == 0 
+    elsif @side1 == 0 && @side2 == 0 && @side3 == 0 
       begin 
         raise TriangleError
         rescue TriangleError => error
+          puts message.error
       end 
     else 
       :isosceles
